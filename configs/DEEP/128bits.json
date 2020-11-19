@@ -1,0 +1,54 @@
+{
+    "hParams": {
+        "m": 16,
+        "k": 256,
+        "batchSize": 2000,
+        "eps": 0.2,
+        "alpha": 0.05,
+        "alphaDiscount": 0.9999,
+        "gamma": 0.99,
+        "_lambda": 0.95,
+        "gradNorm": 0.5,
+        "networkArgs": {
+            "dropoutRate": 0.1
+        },
+        "normalizeObs": false,
+        "normalizeRew": true
+    },
+    "evalStep": 200,
+    "method": "PPO",
+    "port": 29937,
+    "epoch": 500,
+    "useVRam": 16000,
+    "gpus": 2,
+    "wantsMore": false,
+    "dataset": "SIFT/1M",
+    "optimizers": {
+        "policy": {
+            "type": "adam",
+            "args": {
+                "lr": 2e-4,
+                "amsgrad": true
+            },
+            "scheduler": {
+                "type": "exponentialDecay",
+                "args": {
+                    "gamma": 0.9999
+                }
+            }
+        },
+        "value": {
+            "type": "adam",
+            "args": {
+                "lr": 2e-4,
+                "amsgrad": true
+            },
+            "scheduler": {
+                "type": "exponentialDecay",
+                "args": {
+                    "gamma": 0.9999
+                }
+            }
+        }
+    }
+}
