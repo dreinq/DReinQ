@@ -29,7 +29,7 @@ To run the demo, you can setup environment by two ways:
 1. Install Anaconda (Python 3).
 2. Clone and install required packages.
 
-```bash
+```shell
 git clone xxx
 cd DReinQ/src
 conda install -r requirements.yaml
@@ -39,7 +39,7 @@ pip install -e .
 3. Test Installations
 
 
-```bash
+```shell
 python misc/test.pay
 ```
 
@@ -56,7 +56,7 @@ TBD
     * After download, you should convert it to `*.npy` by `misc/ConvertDataset.py`.
 
 After download, place them as follows:
-```python
+```shell
 DReinQ
 |--data
 |  |--SIFT
@@ -76,7 +76,7 @@ DReinQ
 **B: Use custom datasets**
 
 You can arrange your file by following:
-```python
+```shell
 DReinQ
 |--data
 |  |--{YOUR_DATASET}
@@ -106,24 +106,24 @@ If this dataset structure can not satisfy you, you should manually create a clas
 To reproduce results in paper, you can directly use our provided configs that placed in `./configs/`.
 
 For example:
-```bash
+```shell
 python src/main.py --config configs/SIFT/32bits.json
 ```
 This starts a train with 4 sub-codebooks, 256 codewords for each, on SIFT1M dataset.
 
 Also, check the log by:
-```bash
+```shell
 tensorboard --logdir saved/SIFT/1M/latest/
 ```
 
 All options:
-```bash
+```shell
 python src/main.py --help
 ```
 
 ### Encode and Evaluate
 First locate where the saved model `saved.ckpt` placed. e.g. `saved/SIFT/1M/latest/`. Then, test the model by:
-```bash
+```shell
 python src/main.py --path saved/SIFT/1M/latest/ --eval
 ```
 If you want additional results, the encoded `B.npy` and `C.npy` is saved in the same directory.
