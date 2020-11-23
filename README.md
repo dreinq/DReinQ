@@ -5,22 +5,22 @@ This is the host of paper "deep reinforcement quantization".
 **THIS IS NOT THE FINAL VERSION**
 
 ## Introduction
-Deep Reinforcement Quantization use a small neural network to perform Multi-Codebook Quantization.
+Deep Reinforcement Quantization uses a small neural network to perform Multi-Codebook Quantization.
 
 ![Framework]()
 
 ## Prerequisites
 Before run, you should check following requirements.
 
-The code is tested on several environments:
+The code is tested on several operating systems:
 * Ubuntu 16.04+
 * Windows 10
 * CentOS 7+
 
-System requirements:
+Hardware requirements:
 * Intel MKL-compatible CPU
-* CUDA-compatible GPU, ≥ 8 GiB VRAM
-* ≥ 16GiB RAM
+* CUDA-compatible GPU, ≥8GiB VRAM
+* ≥16GiB RAM
 
 ### Environment Setup
 To run the demo, you can setup environment by two ways:
@@ -92,7 +92,7 @@ DReinQ
 
 Then, by just modifying config file, your dataset are in use:
 
-```json
+```yaml
 {
     ...
     "dataset": YOUR_DATASET
@@ -127,4 +127,3 @@ First locate where the saved model `saved.ckpt` placed. e.g. `saved/SIFT/1M/late
 python src/main.py --path saved/SIFT/1M/latest/ --eval
 ```
 If you want additional results, the encoded `B.npy` and `C.npy` is saved in the same directory.
-
